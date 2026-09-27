@@ -1,5 +1,5 @@
-// Inserir aqui a URL pública do estabelecimento no AppBarber após validá-la.
-const BOOKING_URL = '';
+// Agenda oficial informada pelo responsável pelo projeto.
+const BOOKING_URL = 'https://sites.appbarber.com.br/barbeariabarbu-bz17';
 
 const bookingLinks = document.querySelectorAll('.booking-link');
 bookingLinks.forEach((link) => {
