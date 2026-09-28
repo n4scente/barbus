@@ -1,13 +1,12 @@
 // Agenda oficial informada pelo responsável pelo projeto.
 const BOOKING_URL = 'https://sites.appbarber.com.br/barbeariabarbu-bz17';
 
-const bookingLinks = document.querySelectorAll('.booking-link');
+const bookingLinks = document.querySelectorAll('[data-booking-placement]');
 bookingLinks.forEach((link) => {
   if (BOOKING_URL) {
     link.href = BOOKING_URL;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
-    link.innerHTML = 'Agendar horário <span aria-hidden="true">↗</span>';
   }
 
   link.addEventListener('click', () => {
