@@ -27,7 +27,6 @@ const cutShowcase = document.querySelector('[data-cut-showcase]');
 if (cutShowcase) {
   const cards = [...cutShowcase.querySelectorAll('[data-cut-card]')];
   const dots = [...cutShowcase.querySelectorAll('[data-cut-to]')];
-  const counter = cutShowcase.querySelector('[data-cut-current]');
   let currentIndex = 0;
   let pointerStart = null;
 
@@ -44,7 +43,6 @@ if (cutShowcase) {
       if (index === currentIndex) dot.setAttribute('aria-current', 'true');
       else dot.removeAttribute('aria-current');
     });
-    counter.textContent = String(currentIndex + 1).padStart(2, '0');
   };
 
   cutShowcase.querySelectorAll('[data-cut-step]').forEach((button) => {
