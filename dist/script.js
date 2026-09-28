@@ -23,6 +23,18 @@ bookingLinks.forEach((link) => {
   });
 });
 
+document.querySelectorAll('[data-whatsapp-placement]').forEach((link) => {
+  link.addEventListener('click', () => {
+    const placement = link.dataset.whatsappPlacement || 'unknown';
+    window.dispatchEvent(new CustomEvent('barbus:whatsapp-click', {
+      detail: { placement, destination: 'whatsapp' }
+    }));
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'whatsapp_click', { placement, destination: 'whatsapp' });
+    }
+  });
+});
+
 const cutShowcase = document.querySelector('[data-cut-showcase]');
 if (cutShowcase) {
   const cards = [...cutShowcase.querySelectorAll('[data-cut-card]')];
